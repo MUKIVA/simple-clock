@@ -31,16 +31,17 @@ sealed class Modules {
         val composePreview = Implementation("androidx.compose.ui:ui-tooling-preview")
         val composeMaterial = Implementation("androidx.compose.material3:material3")
         val composeActivity = Implementation("androidx.activity:activity-compose:1.7.2")
+        val composeNavigation = Implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     }
 
     object AndroidX : Modules() {
-        val kotlinCore = Implementation("androidx.core:core-ktx:1.12.0")
+        val kotlinCore = Implementation("androidx.core:core-ktx:1.9.0")
         val lifecycleRuntime = Implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     }
 
     object Dagger : Modules() {
-        val hilt = Implementation("com.google.dagger:hilt-android:2.44")
-        val compiler = Kapt("com.google.dagger:hilt-android-compiler:2.44")
+        val hilt = Implementation("com.google.dagger:hilt-android:2.48")
+        val compiler = Kapt("com.google.dagger:hilt-android-compiler:2.48")
     }
 
 }
@@ -52,7 +53,8 @@ fun DependencyHandler.addCompose() {
         Modules.Compose.composeMaterial,
         Modules.Compose.composeUi,
         Modules.Compose.composePreview,
-        Modules.Compose.composeUiGraphics
+        Modules.Compose.composeUiGraphics,
+        Modules.Compose.composeNavigation
     )
 }
 

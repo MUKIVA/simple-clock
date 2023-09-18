@@ -1,9 +1,7 @@
 package com.mukiva.simpleclock
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class ClockApplication : Application() {
-
-    init {
-    }
-}
+@HiltAndroidApp
+class ClockApplication : Application()

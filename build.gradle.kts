@@ -2,9 +2,9 @@
 plugins {
     id("com.android.application") apply false
     id("org.jetbrains.kotlin.android") apply false
-    id("com.google.dagger.hilt.android") version "2.44" apply false
     id("com.android.library") apply false
     id("workplaces.root-project")
+    id("com.google.dagger.hilt.android") version "2.48" apply false
 }
 
 workplaces {
