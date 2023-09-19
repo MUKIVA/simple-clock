@@ -1,6 +1,6 @@
 package com.mukiva.simpleclock.di
 
-import com.mukiva.simpleclock.presentation.MainState
+import com.mukiva.simpleclock.presentation.MainStateFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,6 +11,6 @@ import dagger.hilt.android.components.ViewModelComponent
 class MainModule {
 
     @Provides
-    fun provideMainState() = MainState.default()
+    fun provideMainState() = MainStateFactory.create()
 
 }

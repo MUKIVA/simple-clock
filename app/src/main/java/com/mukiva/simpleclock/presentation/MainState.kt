@@ -1,13 +1,19 @@
 package com.mukiva.simpleclock.presentation
 
-interface NavigationDestination
+import androidx.compose.ui.graphics.painter.Painter
+
+interface IconResource {
+    val painter: Painter
+    val description: String
+}
+
+interface NavigationDestination {
+    val isSelected: Boolean
+    val title: String
+    val icon: IconResource
+    val route: String
+}
 
 data class MainState(
     val navigationItems: List<NavigationDestination>
-) {
-    companion object {
-        fun default() = MainState(
-            navigationItems = emptyList()
-        )
-    }
-}
+)
