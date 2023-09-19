@@ -1,4 +1,5 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.project
 
 interface Module {
     val name: String
@@ -6,6 +7,7 @@ interface Module {
 
 open class Kapt(override val name: String) : Module
 open class Implementation(override val name: String) : Module
+open class Project(override val name: String) : Module
 
 fun DependencyHandler.implementScope(vararg modules: Implementation) {
     modules.forEach { addModule(it.name) }
@@ -13,6 +15,14 @@ fun DependencyHandler.implementScope(vararg modules: Implementation) {
 
 private fun DependencyHandler.addModule(name: String) {
     add("implementation", name)
+}
+
+fun DependencyHandler.featureScope(vararg modules: Project) {
+    modules.forEach { addFeature(it.name) }
+}
+
+private fun DependencyHandler.addFeature(name: String) {
+    add("implementation", project(name))
 }
 
 fun DependencyHandler.kaptScope(vararg modules: Kapt) {
@@ -24,6 +34,10 @@ private fun DependencyHandler.addKapt(name: String) {
 }
 
 sealed class Modules {
+
+    object Core : Modules() {
+        val presentation = Project(":core:presentation")
+    }
 
     object Compose : Modules() {
         val composeUi = Implementation("androidx.compose.ui:ui")
@@ -37,6 +51,7 @@ sealed class Modules {
     object AndroidX : Modules() {
         val kotlinCore = Implementation("androidx.core:core-ktx:1.9.0")
         val lifecycleRuntime = Implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+        val viewModel = Implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     }
 
     object Dagger : Modules() {

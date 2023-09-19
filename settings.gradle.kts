@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Simple Clock"
 include(":app")
+include(":core:presentation")

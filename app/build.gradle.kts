@@ -45,10 +45,15 @@ android {
 
 dependencies {
 
+    featureScope(
+        Modules.Core.presentation
+    )
+
     implementScope(
         Modules.AndroidX.kotlinCore,
         Modules.AndroidX.lifecycleRuntime
     )
+
     addCompose()
     addTests()
     addDagger()
