@@ -46,7 +46,8 @@ android {
 dependencies {
 
     featureScope(
-        Modules.Core.presentation
+        Modules.Core.presentation,
+        Modules.Core.navigation
     )
 
     implementScope(

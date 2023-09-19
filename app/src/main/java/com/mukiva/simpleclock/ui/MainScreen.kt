@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.mukiva.navigation.NavigationDestination
 import com.mukiva.simpleclock.presentation.MainViewModel
-import com.mukiva.simpleclock.presentation.NavigationDestination
 
 @Composable
 fun MainScreen(vm: MainViewModel = viewModel()) {

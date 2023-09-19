@@ -37,6 +37,7 @@ sealed class Modules {
 
     object Core : Modules() {
         val presentation = Project(":core:presentation")
+        val navigation = Project(":core:navigation")
     }
 
     object Compose : Modules() {
