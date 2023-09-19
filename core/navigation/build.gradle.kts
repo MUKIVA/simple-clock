@@ -12,6 +12,7 @@ android {
 dependencies {
     implementation("androidx.compose.ui:ui-graphics-android:1.5.1")
     implementScope(
-        Modules.AndroidX.kotlinCore
+        Modules.AndroidX.kotlinCore,
+        Modules.Compose.composeUi
     )
 }

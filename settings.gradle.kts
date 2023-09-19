@@ -1,8 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":core:navigation")
-
-
 pluginManagement {
     repositories {
         google()
@@ -20,4 +17,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Simple Clock"
 include(":app")
+
 include(":core:presentation")
+
+include(":feature:sleeping-mode")
+include(":feature:stopwatch")
+include(":feature:timer")
+include(":feature:clock")
+include(":feature:alarm")

@@ -47,7 +47,12 @@ dependencies {
 
     featureScope(
         Modules.Core.presentation,
-        Modules.Core.navigation
+
+        Modules.Feature.alarm,
+        Modules.Feature.clock,
+        Modules.Feature.sleepingMode,
+        Modules.Feature.timer,
+        Modules.Feature.stopwatch
     )
 
     implementScope(

@@ -8,6 +8,6 @@ plugins {
 }
 
 workplaces {
-    minSdk.set(27)
+    minSdk.set(31)
     targetSdk.set(34)
 }
